@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/images/logo_splash.png" width="120" alt="MiawMatkul Logo">
+  <img src="assets/images/app_icon.png" width="120" alt="MiawMatkul Logo">
   <h1>MiawMatkul 🐱</h1>
   <p><b>Asisten Manajemen Jadwal Kuliah Khusus Mahasiswa</b></p>
   
