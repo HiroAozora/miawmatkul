@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Folder temp untuk menyimpan APK yang didownload sebelum diinstall -->
+    <cache-path name="apk_downloads" path="." />
+    <external-cache-path name="apk_downloads_ext" path="." />
+</paths>

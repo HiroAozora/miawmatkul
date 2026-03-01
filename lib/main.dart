@@ -16,7 +16,9 @@ import 'ui/pages/profil_page.dart';
 import 'ui/pages/ruangan_page.dart';
 import 'ui/pages/template_page.dart';
 import 'services/notification_service.dart';
+import 'services/fcm_service.dart';
 import 'models/jadwal_exception.dart';
+import 'ui/widgets/update_dialog.dart';
 
 late Isar isar;
 late IsarService isarService;
@@ -34,6 +36,9 @@ void main() async {
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
       );
+
+      // FCM — init setelah Firebase, sebelum runApp
+      await FcmService.instance.init();
 
       final dir = await getApplicationDocumentsDirectory();
       isar = await Isar.open([
@@ -86,6 +91,21 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Cek update saat aplikasi pertama kali dibuka
+    _cekUpdateAplikasi();
+  }
+
+  Future<void> _cekUpdateAplikasi() async {
+    // Beri jeda 2 detik biar app selesai render UI awal
+    await Future.delayed(const Duration(seconds: 2));
+    if (mounted) {
+      await UpdateDialog.showIfNeeded(context);
+    }
+  }
 
   // 1. Siapkan 5 Halaman Sesuai Flow Kamu
   final List<Widget> _pages = [
