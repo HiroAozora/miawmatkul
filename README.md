@@ -21,7 +21,7 @@ Dibangun dengan antarmuka _glassmorphism_ yang modern, ringan, dan didukung data
 ## ✨ Fitur Utama
 
 - 📅 **Jadwal Terorganisir:** Tampilan jadwal harian/mingguan yang intuitif.
-- 🪄 **Ekstraktor Teks Ajaib (Magic Paste):** Copas jadwal _text-only_ dari grup WhatsApp (hari, jam, matkul, dosen, ruangan), dan biarkan MiawMatkul merapikannya jadi kartu jadwal secara otomatis!
+- 📍 **Informasi Ruangan Akurat:** Pantau lokasi gedung dan ruangan perkuliahan agar kamu tidak pernah nyasar atau salah kelas lagi.
 - 🔔 **Pengingat Pintar (FCM):** Terintegrasi Firebase Cloud Messaging untuk notifikasi admin/info mendadak secara _real-time_.
 - ☁️ **Sistem In-App Update (OTA):** Notifikasi pop-up cerdas jika ada versi aplikasi terbaru, menuntun pengguna langsung ke file APK versi terbaru tanpa lewat PlayStore.
 - ⚡ **Offline-First:** Semua data jadwal disimpan di lokal (Isar Database). Nggak ada internet? Nggak masalah!
@@ -61,18 +61,7 @@ Aplikasi ini butuh Firebase untuk Notifikasi & Cek Update OTA.
 
 _(Struktur Firestore untuk sistem OTA bisa dilihat di bagian bawah)._
 
-### 3. Konfigurasi API Key (Gemini & GitHub)
-
-Agar fitur **Magic Paste (Ekstraktor Teks Jadwal)** berfungsi, aplikasi butuh API Key dari Google Gemini.
-
-1. Duplikat file `.env.example` yang ada di root project.
-2. Rename salinannya menjadi `.env`.
-3. Buka file `.env` dan isi dengan API Key kamu:
-   ```env
-   GEMINI_API_KEY=masukkan_api_key_gemini_kamu_disini
-   ```
-
-### 4. Build dan Run
+### 3. Build dan Run
 
 ```bash
 # Menjalankan build runner untuk Isar
